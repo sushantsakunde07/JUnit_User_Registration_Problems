@@ -4,6 +4,7 @@ import com.bridgelabz.UserRegistration;
 import org.junit.Assert;
 import org.junit.Test;
 
+
 public class UserRegistrationTest {
     UserRegistration userRegistration = new UserRegistration();
 
@@ -28,6 +29,18 @@ public class UserRegistrationTest {
     @Test
     public void  givenLastName_WhenInvalid_ShouldReturnTrue(){
         boolean valid = userRegistration.lastName("sakunde");
+        Assert.assertEquals(false,valid);
+    }
+
+    @Test
+    public void  givenEmailAddress_WhenValid_ShouldReturnTrue(){
+        boolean valid = userRegistration.emailAddress("sushantsakunde07@gmail.com");
+        Assert.assertEquals(true,valid);
+    }
+
+    @Test
+    public void  givenEmailAddress_WhenInvalid_ShouldReturnTrue(){
+        boolean valid = userRegistration.emailAddress("sushantsakunde07@");
         Assert.assertEquals(false,valid);
     }
 }
